@@ -1,0 +1,2589 @@
+* {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+*::selection {
+    background-color: rgb(173, 153, 102);
+    color: rgb(239, 235, 224);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(239, 235, 224);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(173, 153, 102);
+    border-radius: 2.5px;
+    corner-shape: scoop;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(158, 139, 91);
+}
+
+a,
+p,
+h1,
+h2,
+h3 {
+    user-select: none;
+}
+
+img,
+svg,
+figure {
+    user-select: none;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+
+/* Fixed Navigation */
+
+.fixedNavigation {
+    position: fixed;
+
+    top: 50%;
+
+    z-index: 10;
+
+    background-color: rgb(239, 235, 224);
+
+    transform: rotate(90deg) translateY(-100%);
+    transform-origin: left top;
+    width: 30vh;
+    height: 12vh;
+
+    corner-shape: scoop;
+    overflow: hidden;
+
+    outline: solid rgb(255, 255, 255) 0.25vh;
+    outline-offset: -1vh;
+
+    box-shadow: rgb(0, 0, 0, 0.1) 0 0 25px 2.5px;
+}
+
+.fixedNavigation a {
+    color: rgb(4, 9, 30);
+    text-decoration: none;
+    padding: 5vh 0;
+}
+
+.fixedNavigation h1 {
+    color: currentColor;
+    font-weight: 350;
+    font-size: 2vh;
+    letter-spacing: 0.25vh;
+    width: 30vh;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    transform: translateY(200%);
+}
+
+.Menu {
+    background-color: rgb(158, 139, 91);
+
+    border-radius: 1.5vh 1.5vh 0 0;
+
+    box-shadow: rgb(0, 0, 0, 0.25) 0 0 50px 5px;
+}
+
+.Menu a {
+    color: rgb(255, 255, 255);
+}
+
+.Table {
+    border-radius: 0 0 1.5vh 1.5vh;
+    right: 0;
+    transform: rotate(90deg) translateY(-30vh);
+}
+
+
+/* Header */
+
+header {
+    padding: 1.25vh 12.5%;
+    width: 75%;
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(0, 0, 0, 0.25) 0 0 50px 5px;
+}
+
+header div {
+    width: 100%;
+    display: inline-block;
+}
+
+
+header ul {
+    width: 117.5vh;
+    padding: 0;
+    margin: auto;
+}
+
+header li {
+    width: 7.5vh;
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    margin: 0 2.5vh;
+    opacity: 0;
+    transform: translateY(1vh);
+    animation: FadeInPaginas 1s ease forwards;
+}
+
+header li:nth-child(4) {
+    width: 10vh;
+    margin: 1vh 15vh;
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    opacity: 0;
+    animation: FadeInPaginas 1s ease forwards;
+}
+
+header li:nth-child(4) svg {
+    position: relative;
+    left: 50%;
+    transform: translateX(-57.5%);
+}
+
+@keyframes FadeInPaginas {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+header>div>ul:nth-child(1)>li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+header>div>ul:nth-child(1)>li:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+header>div>ul:nth-child(1)>li:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+header>div>ul:nth-child(1)>li:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+header>div>ul:nth-child(1)>li:nth-child(6) {
+    animation-delay: 1s;
+}
+
+header>div>ul:nth-child(1)>li:nth-child(7) {
+    animation-delay: 1.2s;
+}
+
+header a,
+header p {
+    font-size: 1.5vh;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 450;
+    text-transform: uppercase;
+    color: rgb(4, 9, 30);
+
+    transition: 0.3s;
+
+    padding: 0.5vh 0.75vh;
+    border-bottom: 1px;
+}
+
+header p {
+    cursor: default;
+}
+
+header a:hover,
+header p:hover {
+    color: rgb(173, 153, 102);
+}
+
+header .currentPage {
+    color: rgb(173, 153, 102);
+
+    padding: 0.5vh 0.75vh;
+    border-bottom: 1px solid rgb(173, 153, 102);
+}
+
+header .DropdownListPage {
+    display: inline-block;
+    width: 10vh;
+    transform: translateX(-10%);
+}
+
+header .DropdownListPage::after {
+    content: "";
+    width: 1.5vh;
+    height: 1.5vh;
+
+    display: inline-block;
+    position: relative;
+    top: 0.2vh;
+    margin-left: 0.5vh;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 640 640' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='rgb(0%2C0%2C0)' d='M297.4 470.6C309.9 483.1 330.2 483.1 342.7 470.6L534.7 278.6C547.2 266.1 547.2 245.8 534.7 233.3C522.2 220.8 501.9 220.8 489.4 233.3L320 402.7L150.6 233.4C138.1 220.9 117.8 220.9 105.3 233.4C92.8 245.9 92.8 266.2 105.3 278.7L297.3 470.7z'/%3E%3C/svg%3E");
+
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    transition: 0.3s;
+}
+
+header .DropdownListPage:hover::after {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 640 640' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='rgb(173%2C153%2C102)' d='M297.4 470.6C309.9 483.1 330.2 483.1 342.7 470.6L534.7 278.6C547.2 266.1 547.2 245.8 534.7 233.3C522.2 220.8 501.9 220.8 489.4 233.3L320 402.7L150.6 233.4C138.1 220.9 117.8 220.9 105.3 233.4C92.8 245.9 92.8 266.2 105.3 278.7L297.3 470.7z'/%3E%3C/svg%3E");
+}
+
+header .listaSuspensa {
+    position: absolute;
+    z-index: 2;
+    display: block;
+
+    padding: 1vh 1.5vh;
+    width: max-content;
+
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(0, 0, 0, 0.1) 0 0 25px 2.5px;
+
+    opacity: 0;
+    transform: translate(-15%, -1vh);
+    transition: 0.5s;
+    pointer-events: none;
+
+    border-radius: 0.75vh;
+    corner-shape: scoop;
+}
+
+header .DropdownListPage:hover~.listaSuspensa,
+header .listaSuspensa:hover {
+    opacity: 1;
+    transform: translate(-15%, 0);
+    pointer-events: auto;
+}
+
+header .listaSuspensa a {
+    font-size: 1.33vh;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 375;
+    white-space: nowrap;
+
+    margin: 1vh 0;
+    display: block;
+}
+
+
+/* Banner */
+
+.banner {
+    width: 100%;
+    height: 85vh;
+    position: relative;
+}
+
+.banner img {
+    height: 100%;
+    width: 82.5%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+
+    border-radius: 5vh;
+    corner-shape: scoop;
+
+    box-shadow: rgb(0, 0, 0, 0.33) 0 0 75px 7.5px;
+
+    pointer-events: none;
+}
+
+.banner div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 0 5vh 2.5vh 5vh;
+
+    border: solid rgb(255, 255, 255) 0.1vh;
+    outline: solid rgb(255, 255, 255) 0.1vh;
+    outline-offset: 0.75vh;
+
+    border-radius: 5vh;
+    corner-shape: scoop;
+}
+
+.banner h1 {
+    color: rgb(255, 255, 255);
+    font-weight: 100;
+    text-align: center;
+    font-size: 10vh;
+    padding: 0 2.5vh 1.5vh 2.5vh;
+    border-bottom: solid rgb(255, 255, 255) 0.1vh;
+    margin: 1vh;
+    font-family: "Playfair Display", serif;
+    text-transform: uppercase;
+    letter-spacing: 1.75vh;
+
+    user-select: text;
+
+    opacity: 0;
+    transform: translateY(2vw);
+    animation: FadeInBannerText 2s ease forwards;
+}
+
+.banner h2 {
+    color: rgb(255, 255, 255);
+    font-weight: 200;
+    text-align: center;
+    font-size: 2vh;
+    font-family: "Roboto", sans-serif;
+
+    opacity: 0;
+    transform: translateY(2vw);
+    animation: FadeInBannerText 2.5s ease forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes FadeInBannerText {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Second Banner */
+
+.secondBanner {
+    width: 100%;
+    height: 50vh;
+
+}
+
+.secondBanner img {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+
+    height: 100%;
+    width: 82.5%;
+
+    border-radius: 5vh;
+    corner-shape: scoop;
+
+    box-shadow: rgb(0, 0, 0, 0.33) 0 0 75px 7.5px;
+
+    pointer-events: none;
+
+    object-fit: cover;
+    object-position: 0 -27.5vh;
+}
+
+.secondBanner div {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 0 5vh 2.5vh 5vh;
+
+    border: solid rgb(255, 255, 255) 0.1vh;
+    outline: solid rgb(255, 255, 255) 0.1vh;
+    outline-offset: 0.75vh;
+
+    border-radius: 5vh;
+    corner-shape: scoop;
+}
+
+.secondBanner h1 {
+    color: rgb(255, 255, 255);
+    font-weight: 100;
+    text-align: center;
+    font-size: 10vh;
+    padding: 0 2.5vh 1.5vh 2.5vh;
+    border-bottom: solid rgb(255, 255, 255) 0.1vh;
+    margin: 1vh;
+    font-family: "Playfair Display", serif;
+    text-transform: uppercase;
+    letter-spacing: 1.75vh;
+
+    user-select: text;
+
+    opacity: 0;
+    transform: translateY(2vw);
+    animation: FadeInBannerText 2s ease forwards;
+}
+
+.secondBanner h2 {
+    color: rgb(255, 255, 255);
+    font-weight: 200;
+    text-align: center;
+    font-size: 2vh;
+    font-family: "Roboto", sans-serif;
+
+    opacity: 0;
+    transform: translateY(2vw);
+    animation: FadeInBannerText 2.5s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.secondBanner a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 200;
+    text-align: center;
+    font-size: 2vh;
+    font-family: "Roboto", sans-serif;
+
+    transition: 0.3s;
+
+    padding: 0.5vh 0.75vh;
+    border-bottom: 1px;
+}
+
+.secondBanner a:hover {
+    color: rgb(173, 153, 102);
+    font-weight: 300;
+}
+
+@keyframes FadeInBannerText {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Menu */
+
+.menu {
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    margin: 0 15%;
+    width: 70%;
+
+    position: relative;
+    transform: translateY(-7.5vh);
+
+    border-radius: 5vh;
+    corner-shape: scoop;
+
+    box-shadow: rgb(0, 0, 0, 0.2) 0 0 75px 7.5px;
+}
+
+.menu>div {
+    max-height: 80vh;
+    width: 100%;
+    padding: 20% 0;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.menu>div:first-child {
+    background-color: rgb(247, 245, 239);
+    width: 80%;
+    padding: 15% 10% 30% 10%;
+    max-height: 100%;
+
+    border-radius: 5vh 0 0 5vh;
+    corner-shape: scoop;
+}
+
+.menu>div:first-child>div {
+    height: auto;
+    top: 27.5vh;
+
+    position: sticky;
+}
+
+.menu>div:first-child>div>h1 {
+    color: rgb(4, 9, 30);
+    font-weight: 100;
+    text-align: left;
+    font-size: 2.75vw;
+    font-family: "Playfair Display", serif;
+    text-transform: uppercase;
+    letter-spacing: 0.25vh;
+
+    transition: 0.25s;
+}
+
+.menu>div:first-child>div>h1:hover {
+    color: rgb(173, 153, 102);
+    text-shadow: 0 0 10px rgb(173, 153, 102, 0.5);
+}
+
+.menu>div:first-child>div>h2 {
+    color: rgb(14, 23, 54);
+    font-weight: 200;
+    text-align: left;
+    font-size: 0.875vw;
+    font-family: "Roboto", sans-serif;
+    margin: 1vh 0 5vh 0;
+    text-align: justify;
+    hyphens: auto;
+    word-wrap: break-word;
+    user-select: none;
+}
+
+.menu>div:first-child>div>h2>span {
+    font-size: 1.5vw;
+    float: left;
+    font-family: "Playfair Display", serif;
+    font-weight: 100;
+    padding-right: 0.5vh;
+}
+
+.menu>div:first-child>div>a {
+    color: rgb(247, 245, 239);
+    text-decoration: none;
+    font-weight: 400;
+    text-align: center;
+    font-size: 0.875vw;
+
+    display: block;
+    width: 7.5vw;
+
+    padding: 1.25vh 2.5vh;
+
+    background-color: rgb(173, 153, 102);
+
+    border: solid rgb(247, 245, 239) 0.1vh;
+    outline: solid rgb(247, 245, 239) 0.1vh;
+    outline-offset: -0.5vh;
+    border-radius: 1vh;
+    corner-shape: scoop;
+
+    transition: 1s;
+}
+
+.menu>div:first-child>div>a:hover {
+    color: rgb(173, 153, 102);
+
+    background-color: rgb(173, 153, 102, 0);
+
+    border: solid rgb(173, 153, 102) 0.1vh;
+    outline: solid rgb(173, 153, 102) 0.1vh;
+    outline-offset: -0.5vh;
+}
+
+.menu>div:last-child {
+    background-color: rgb(239, 235, 224);
+    width: 100%;
+
+    border-radius: 0 5vh 5vh 0;
+    corner-shape: scoop;
+}
+
+.menu>div:last-child>div>h1 {
+    color: rgb(0, 0, 0, 0.6);
+    font-weight: 100;
+    text-align: center;
+    font-size: 1.125vw;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    letter-spacing: 0.15vh;
+
+    padding: 0 1vh 1.5vh 1vh;
+    border-bottom: solid rgb(0, 0, 0, 0.6) 0.1vh;
+    margin: 10vh 20vh 2.5vh 20vh;
+
+    transition: 0.5s;
+
+    user-select: text;
+}
+
+.menu>div:last-child>div>h1:hover {
+    color: rgb(173, 153, 102);
+    text-shadow: 0 0 5px rgb(173, 153, 102, 0.5);
+
+    border-bottom: solid rgb(173, 153, 102) 0.1vh;
+}
+
+.menu>div:last-child>div>h1:first-child {
+    margin: 0vh 20vh 2.5vh 20vh;
+}
+
+.menu>div:last-child>div>dl>dt {
+    color: rgb(46, 35, 8);
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    text-align: center;
+    font-size: 0.8vw;
+
+    list-style: inside;
+
+    transition: 0.2s;
+}
+
+.menu>div:last-child>div>dl>dt:hover {
+    color: rgb(173, 153, 102);
+    text-shadow: 0 0 5px rgb(173, 153, 102, 0.25);
+}
+
+.menu>div:last-child>div>dl>dt:hover+dd {
+    color: rgb(173, 153, 102, 0.75);
+}
+
+.menu>div:last-child>div>dl>dd {
+    color: rgb(71, 58, 25);
+    font-weight: 300;
+    text-align: center;
+    font-size: 0.75vw;
+    font-family: "Roboto", sans-serif;
+
+    margin: 0.5vh 0 3vh 0;
+
+    transition: 0.1s;
+}
+
+.menu>div:last-child>div>dl>dd:last-child {
+    margin: 0.5vh 0 0 0;
+}
+
+
+/* Gallery */
+
+.gallery {
+    width: 103vh;
+    margin: 0 auto;
+    position: relative;
+
+    z-index: 2;
+    transform: translate(-3.5vh, -20vh);
+}
+
+.gallery div {
+    position: relative;
+
+    height: 100%;
+}
+
+.gallery div:nth-child(2) {
+    transform: translateX(7.5vh);
+}
+
+.gallery div:nth-child(1) figure {
+    position: relative;
+    right: 0;
+}
+
+.gallery figure {
+    margin: 0 2.5vh 5vh 2.5vh;
+
+    cursor: pointer;
+
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+
+    box-shadow: rgb(0, 0, 0, 0.25) 0 0 50px 5px;
+
+    border-radius: 2.5vh;
+    corner-shape: scoop;
+}
+
+.gallery div:nth-child(2) figure:first-child{
+    vertical-align: top;
+}
+
+.gallery div:nth-child(1) figure:last-child,
+.gallery div:nth-child(2) figure:last-child{
+    transform: translateY(5vh);
+}
+
+.gallery>div:nth-child(odd)>figure:nth-child(odd),
+.gallery>div:nth-child(even)>figure:nth-child(even) {
+    width: 50vh;
+    height: calc(4/3 * 50vh);
+}
+
+.gallery>div:nth-child(odd)>figure:nth-child(even),
+.gallery>div:nth-child(even)>figure:nth-child(odd) {
+    width: 42.5vh;
+    height: calc(4/3 * 42.5vh);
+}
+
+.gallery figure img {
+    width: 100%;
+
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 2.5vh;
+    corner-shape: scoop;
+
+    outline: solid rgb(255, 255, 255) 0.25vh;
+    outline-offset: -1vh;
+
+    transition: 0.5s;
+
+    pointer-events: auto;
+}
+
+.gallery figure img:hover,
+.gallery figure svg:hover+img {
+    filter: brightness(50%);
+    transform: scale(1.1);
+}
+
+.gallery figure svg {
+    position: absolute;
+    width: 7.5vh;
+    height: 7.5vh;
+    z-index: 3;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -150%) rotate(45deg);
+    opacity: 0;
+    transition: 0.66s;
+}
+
+.gallery figure:hover svg {
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 1;
+}
+
+/* Gallery No Space */
+
+.galleryNS {
+    width: 103vh;
+    margin: 10vh auto 0 auto;
+    position: relative;
+
+    z-index: 2;
+    transform: translate(-3.5vh, 0);
+}
+
+.galleryNS div {
+    position: relative;
+
+    height: 100%;
+}
+
+.galleryNS div:nth-child(2) {
+    transform: translateX(7.5vh);
+}
+
+.galleryNS div:nth-child(1) figure {
+    position: relative;
+    right: 0;
+}
+
+.galleryNS figure {
+    margin: 0 2.5vh 5vh 2.5vh;
+
+    cursor: pointer;
+
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+
+    box-shadow: rgb(0, 0, 0, 0.25) 0 0 50px 5px;
+
+    border-radius: 2.5vh;
+    corner-shape: scoop;
+}
+
+.galleryNS div:nth-child(2) figure:first-child{
+    vertical-align: top;
+}
+
+.galleryNS div:nth-child(1) figure:last-child,
+.galleryNS div:nth-child(2) figure:last-child{
+    transform: translateY(5vh);
+}
+
+.galleryNS>div:nth-child(odd)>figure:nth-child(odd),
+.galleryNS>div:nth-child(even)>figure:nth-child(even) {
+    width: 50vh;
+    height: calc(4/3 * 50vh);
+}
+
+.galleryNS>div:nth-child(odd)>figure:nth-child(even),
+.galleryNS>div:nth-child(even)>figure:nth-child(odd) {
+    width: 42.5vh;
+    height: calc(4/3 * 42.5vh);
+}
+
+.galleryNS figure img {
+    width: 100%;
+
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 2.5vh;
+    corner-shape: scoop;
+
+    outline: solid rgb(255, 255, 255) 0.25vh;
+    outline-offset: -1vh;
+
+    transition: 0.5s;
+
+    pointer-events: auto;
+}
+
+.galleryNS figure img:hover,
+.galleryNS figure svg:hover+img {
+    filter: brightness(50%);
+    transform: scale(1.1);
+}
+
+.galleryNS figure svg {
+    position: absolute;
+    width: 7.5vh;
+    height: 7.5vh;
+    z-index: 3;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -150%) rotate(45deg);
+    opacity: 0;
+    transition: 0.66s;
+}
+
+.galleryNS figure:hover svg {
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 1;
+}
+
+
+/* reservation */
+
+.reservations {
+    min-height: auto;
+    width: 70%;
+
+    margin: 0 15%;
+
+    position: relative;
+
+    align-items: start;
+    justify-content: center;
+    justify-items: center;
+
+    transform: translateY(-30vh);
+}
+
+.reservations>div {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.reservations>div:first-child {
+    height: 125vh;
+    width: 60%;
+
+    background-color: rgb(239, 235, 224);
+
+    border-radius: 5vh;
+    corner-shape: scoop;
+
+    box-shadow: rgb(0, 0, 0, 0.2) 0 0 75px 7.5px;
+}
+
+.reservations>div:first-child>form {
+    padding: 10%;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 5vh;
+    grid-row-gap: 2.5vh;
+
+    justify-items: center;
+}
+
+.reservations>div:first-child>form>input {
+    display: block;
+    height: 3vh;
+    width: 100%;
+
+    border: 0;
+    border-radius: 0.75vh;
+    corner-shape: scoop;
+
+    background-color: rgb(255, 255, 255);
+    outline: solid rgb(239, 235, 224) 0.25vh;
+    outline-offset: -0.5vh;
+
+    padding: 1.25vh 1.5vh;
+
+    font-size: 1.5vh;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    color: rgb(4, 9, 30);
+
+    transition: 0.3s;
+}
+
+.reservations>div:first-child>form>input:nth-child(1) {
+    grid-area: 1 / 1 / 2 / 3;
+}
+
+.reservations>div:first-child>form>input:nth-child(2) {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.reservations>div:first-child>form>input:nth-child(3) {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.reservations>div:first-child>form>input:nth-child(4) {
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+.reservations>div:first-child>form>input:nth-child(5) {
+    grid-area: 3 / 2 / 4 / 3;
+}
+
+.reservations>div:first-child>form>input:nth-child(6) {
+    grid-area: 4 / 1 / 5 / 3;
+}
+
+.reservations>div:first-child>form>input:nth-child(7) {
+    grid-area: 5 / 1 / 6 / 3;
+}
+
+.reservations>div:first-child>form>input:nth-child(8) {
+    grid-area: 6 / 1 / 7 / 3;
+}
+
+.reservations>div:first-child>form>textarea {
+    grid-area: 7 / 1 / 8 / 3;
+}
+
+.reservations>div:first-child>form>input:nth-child(10) {
+    grid-area: 8 / 1 / 9 / 3;
+}
+
+.reservations>div:first-child>form>input::placeholder {
+    color: rgb(14, 23, 54);
+    font-weight: 300;
+}
+
+.reservations>div:first-child>form>input:last-child {
+    color: rgb(239, 235, 224);
+    text-decoration: none;
+    font-weight: 500;
+    text-align: center;
+    font-size: 1.75vh;
+    letter-spacing: 0.075vh;
+
+    padding: 1.25vh 2.5vh;
+
+    background-color: rgb(173, 153, 102);
+
+    border: solid rgb(247, 245, 239) 0.1vh;
+    outline: solid rgb(247, 245, 239) 0.1vh;
+    outline-offset: -0.5vh;
+    border-radius: 1vh;
+    corner-shape: scoop;
+
+    transition: 1s;
+
+    height: 5.25vh;
+    width: auto;
+
+    margin-left: auto;
+
+    cursor: pointer;
+}
+
+.reservations>div:first-child>form>input:last-child:hover {
+    color: rgb(173, 153, 102);
+
+    background-color: rgb(173, 153, 102, 0);
+
+    border: solid rgb(173, 153, 102) 0.1vh;
+    outline: solid rgb(173, 153, 102) 0.1vh;
+    outline-offset: -0.5vh;
+}
+
+.reservations>div:first-child>form>textarea {
+    display: block;
+    height: 20vh;
+    width: 100%;
+    resize: none;
+
+    border: 0;
+    border-radius: 0.75vh;
+    corner-shape: scoop;
+
+    outline: solid rgb(239, 235, 224) 0.25vh;
+    outline-offset: -0.5vh;
+
+    padding: 1.25vh 1.5vh;
+
+    font-size: 1.5vh;
+    font-family: "Roboto", sans-serif;
+    font-weight: 450;
+    color: rgb(4, 9, 30);
+
+    transition: 0.3s;
+}
+
+.reservations>div:last-child {
+    height: 75%;
+    width: 20%;
+    margin: 0 9%;
+
+    position: relative;
+
+    top: 15vh;
+}
+
+.reservations>div:last-child>div {
+    height: auto;
+
+    position: sticky;
+    top: 25vh;
+}
+
+.reservations>div:last-child>div>h1 {
+    color: rgb(4, 9, 30);
+    font-weight: 100;
+    text-align: left;
+    font-size: 2.75vw;
+    font-family: "Playfair Display", serif;
+    text-transform: uppercase;
+    letter-spacing: 0.25vh;
+
+    transition: 0.25s;
+}
+
+.reservations>div:last-child>div>h1:hover {
+    color: rgb(173, 153, 102);
+    text-shadow: 0 0 10px rgb(173, 153, 102, 0.5);
+}
+
+.reservations>div:last-child>div>h2 {
+    color: rgb(14, 23, 54);
+    font-weight: 200;
+    text-align: left;
+    font-size: 0.875vw;
+    font-family: "Roboto", sans-serif;
+    margin-top: 1vh;
+    text-align: justify;
+    hyphens: auto;
+    word-wrap: break-word;
+    user-select: none;
+}
+
+.reservations>div:last-child>div>h2>span {
+    font-size: 1.5vw;
+    float: left;
+    font-family: "Playfair Display", serif;
+    font-weight: 100;
+    padding-right: 0.5vh;
+}
+
+
+/* about */
+
+.about {
+    min-height: auto;
+    width: 70%;
+
+    margin: 0 15%;
+
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+    gap: 5vh;
+
+    position: relative;
+
+    align-items: end;
+    justify-content: center;
+    justify-items: center;
+
+    transform: translateY(-12.5vh);
+}
+
+.about div:first-child {
+    width: 60%;
+    height: auto;
+
+    padding: 10%;
+}
+
+.about div:first-child h1 {
+    color: rgb(4, 9, 30);
+    font-weight: 100;
+    text-align: left;
+    font-size: 2.75vw;
+    font-family: "Playfair Display", serif;
+    text-transform: uppercase;
+    letter-spacing: 0.25vh;
+
+    transition: 0.25s;
+}
+
+.about div:first-child h1:hover {
+    color: rgb(173, 153, 102);
+    text-shadow: 0 0 10px rgb(173, 153, 102, 0.5);
+}
+
+.about div:first-child h2 {
+    color: rgb(14, 23, 54);
+    font-weight: 200;
+    text-align: left;
+    font-size: 0.875vw;
+    font-family: "Roboto", sans-serif;
+    margin-top: 5vh;
+    text-align: justify;
+    hyphens: auto;
+    word-wrap: break-word;
+    user-select: none;
+}
+
+.about div:first-child span {
+    font-size: 1.5vw;
+    float: left;
+    font-family: "Playfair Display", serif;
+    font-weight: 100;
+    padding-right: 0.5vh;
+}
+
+.about div:first-child img {
+    width: 50%;
+    margin-top: 10vh;
+}
+
+.about div:last-child {
+    width: 100%;
+    height: auto;
+}
+
+.about div:last-child img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 5vh;
+    corner-shape: scoop;
+
+    outline: solid rgb(255, 255, 255) 0.25vh;
+    outline-offset: -1vh;
+
+    pointer-events: none;
+
+    box-shadow: rgb(0, 0, 0, 0.25) 0 0 50px 5px;
+}
+
+
+/* about No Space */
+
+.aboutNS {
+    min-height: auto;
+    width: 70%;
+
+    margin: 12.5vh 15%;
+
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+    gap: 5vh;
+
+    position: relative;
+
+    align-items: end;
+    justify-content: center;
+    justify-items: center;
+}
+
+.aboutNS div:first-child {
+    width: 60%;
+    height: auto;
+
+    padding: 10%;
+}
+
+.aboutNS div:first-child h1 {
+    color: rgb(4, 9, 30);
+    font-weight: 100;
+    text-align: left;
+    font-size: 2.75vw;
+    font-family: "Playfair Display", serif;
+    text-transform: uppercase;
+    letter-spacing: 0.25vh;
+
+    transition: 0.25s;
+}
+
+.aboutNS div:first-child h1:hover {
+    color: rgb(173, 153, 102);
+    text-shadow: 0 0 10px rgb(173, 153, 102, 0.5);
+}
+
+.aboutNS div:first-child h2 {
+    color: rgb(14, 23, 54);
+    font-weight: 200;
+    text-align: left;
+    font-size: 0.875vw;
+    font-family: "Roboto", sans-serif;
+    margin-top: 5vh;
+    text-align: justify;
+    hyphens: auto;
+    word-wrap: break-word;
+    user-select: none;
+}
+
+.aboutNS div:first-child span {
+    font-size: 1.5vw;
+    float: left;
+    font-family: "Playfair Display", serif;
+    font-weight: 100;
+    padding-right: 0.5vh;
+}
+
+.aboutNS div:first-child img {
+    width: 50%;
+    margin-top: 10vh;
+}
+
+.aboutNS div:last-child {
+    width: 100%;
+    height: auto;
+}
+
+.aboutNS div:last-child img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 5vh;
+    corner-shape: scoop;
+
+    outline: solid rgb(255, 255, 255) 0.25vh;
+    outline-offset: -1vh;
+
+    pointer-events: none;
+
+    box-shadow: rgb(0, 0, 0, 0.25) 0 0 50px 5px;
+}
+
+
+/* invert about */
+
+.invertAbout {
+    min-height: auto;
+    width: 70%;
+
+    margin: 0 15%;
+
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+    gap: 5vh;
+
+    position: relative;
+
+    align-items: end;
+    justify-content: center;
+    justify-items: center;
+
+    transform: translateY(-12.5vh);
+}
+
+.invertAbout div:last-child {
+    width: 60%;
+    height: auto;
+
+    padding: 10%;
+}
+
+.invertAbout div:last-child h1 {
+    color: rgb(4, 9, 30);
+    font-weight: 100;
+    text-align: left;
+    font-size: 2.75vw;
+    font-family: "Playfair Display", serif;
+    text-transform: uppercase;
+    letter-spacing: 0.25vh;
+
+    transition: 0.25s;
+}
+
+.invertAbout div:last-child h1:hover {
+    color: rgb(173, 153, 102);
+    text-shadow: 0 0 10px rgb(173, 153, 102, 0.5);
+}
+
+.invertAbout div:last-child h2 {
+    color: rgb(14, 23, 54);
+    font-weight: 200;
+    text-align: left;
+    font-size: 0.875vw;
+    font-family: "Roboto", sans-serif;
+    margin-top: 5vh;
+    text-align: justify;
+    hyphens: auto;
+    word-wrap: break-word;
+    user-select: none;
+}
+
+.invertAbout div:last-child span {
+    font-size: 1.5vw;
+    float: left;
+    font-family: "Playfair Display", serif;
+    font-weight: 100;
+    padding-right: 0.5vh;
+}
+
+.invertAbout div:last-child img {
+    width: 50%;
+    margin-top: 10vh;
+}
+
+.invertAbout div:first-child {
+    width: 100%;
+    height: auto;
+}
+
+.invertAbout div:first-child img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 5vh;
+    corner-shape: scoop;
+
+    outline: solid rgb(255, 255, 255) 0.25vh;
+    outline-offset: -1vh;
+
+    pointer-events: none;
+
+    box-shadow: rgb(0, 0, 0, 0.25) 0 0 50px 5px;
+}
+
+
+/* invert about No Space */
+
+.invertAboutNS {
+    min-height: auto;
+    width: 70%;
+
+    margin: 12.5vh 15%;
+
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+    gap: 5vh;
+
+    position: relative;
+
+    align-items: end;
+    justify-content: center;
+    justify-items: center;
+}
+
+.invertAboutNS div:last-child {
+    width: 60%;
+    height: auto;
+
+    padding: 10%;
+}
+
+.invertAboutNS div:last-child h1 {
+    color: rgb(4, 9, 30);
+    font-weight: 100;
+    text-align: left;
+    font-size: 2.75vw;
+    font-family: "Playfair Display", serif;
+    text-transform: uppercase;
+    letter-spacing: 0.25vh;
+
+    transition: 0.25s;
+}
+
+.invertAboutNS div:last-child h1:hover {
+    color: rgb(173, 153, 102);
+    text-shadow: 0 0 10px rgb(173, 153, 102, 0.5);
+}
+
+.invertAboutNS div:last-child h2 {
+    color: rgb(14, 23, 54);
+    font-weight: 200;
+    text-align: left;
+    font-size: 0.875vw;
+    font-family: "Roboto", sans-serif;
+    margin-top: 5vh;
+    text-align: justify;
+    hyphens: auto;
+    word-wrap: break-word;
+    user-select: none;
+}
+
+.invertAboutNS div:last-child span {
+    font-size: 1.5vw;
+    float: left;
+    font-family: "Playfair Display", serif;
+    font-weight: 100;
+    padding-right: 0.5vh;
+}
+
+.invertAboutNS div:last-child img {
+    width: 50%;
+    margin-top: 10vh;
+}
+
+.invertAboutNS div:first-child {
+    width: 100%;
+    height: auto;
+}
+
+.invertAboutNS div:first-child img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 5vh;
+    corner-shape: scoop;
+
+    outline: solid rgb(255, 255, 255) 0.25vh;
+    outline-offset: -1vh;
+
+    pointer-events: none;
+
+    box-shadow: rgb(0, 0, 0, 0.25) 0 0 50px 5px;
+}
+
+
+/* slideshow */
+
+.slideshow {
+    height: auto;
+    width: 70%;
+
+    margin: 0 15%;
+
+    display: inline-block;
+    position: relative;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.slideshow img {
+    width: 72.5%;
+    transform: translateX(17.5%);
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5vh;
+    corner-shape: scoop;
+
+    outline: solid rgb(255, 255, 255) 0.25vh;
+    outline-offset: -1vh;
+    pointer-events: none;
+
+    box-shadow: rgb(0, 0, 0, 0.25) 0 0 50px 5px;
+}
+
+.slideshow div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: rgb(247, 245, 239, 0.75);
+
+    padding: 0.5vh 7.5vh 5vh 7.5vh;
+
+    border: solid rgb(4, 9, 30) 0.1vh;
+    outline: solid rgb(4, 9, 30) 0.1vh;
+    outline-offset: -0.75vh;
+
+    border-radius: 2.5vh;
+    corner-shape: scoop;
+}
+
+.slideshow h1 {
+    color: rgb(4, 9, 30);
+    font-weight: 100;
+    text-align: center;
+    font-size: 5vh;
+    padding: 0 2.5vh 1.5vh 2.5vh;
+    border-bottom: solid rgb(4, 9, 30) 0.1vh;
+    margin: 1vh;
+    font-family: "Playfair Display", serif;
+    text-transform: uppercase;
+    letter-spacing: 0.25vh;
+
+    user-select: text;
+}
+
+.slideshow h2 {
+    color: rgb(14, 23, 54);
+    font-weight: 200;
+    text-align: center;
+    font-size: 2vh;
+    font-family: "Roboto", sans-serif;
+}
+
+
+/* Contact */
+
+.contact {
+    height: auto;
+    width: 70%;
+
+    margin: 12.5vh 15% 0 15%;
+
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+    gap: 5vh;
+
+    position: relative;
+
+    align-items: start;
+    justify-content: center;
+    justify-items: center;
+}
+
+
+.contact>div:first-child {
+    width: 80%;
+    height: 100%;
+
+    position: relative;
+
+    background-color: rgb(199, 200, 206);
+
+    border-radius: 5vh;
+    corner-shape: scoop;
+
+    outline: solid rgb(255, 255, 255) 0.25vh;
+    outline-offset: -1vh;
+    pointer-events: none;
+
+    box-shadow: rgb(0, 0, 0, 0.25) 0 0 50px 5px;
+}
+
+.contact>div:first-child svg {
+    position: absolute;
+    width: 10vh;
+    height: 10vh;
+    z-index: 3;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    fill: rgb(255, 255, 255);
+}
+
+.contact>div:last-child {
+    width: 60%;
+    height: auto;
+
+    padding: 10%;
+}
+
+.contact>div:last-child>div {
+    padding: 2.5vh 0;
+}
+
+.contact>div:last-child h1 {
+    color: rgb(4, 9, 30);
+    font-weight: 100;
+    text-align: left;
+    font-size: 2.75vw;
+    font-family: "Playfair Display", serif;
+    text-transform: uppercase;
+    letter-spacing: 0.25vh;
+
+    transition: 0.25s;
+}
+
+.contact>div:last-child h1:hover {
+    color: rgb(173, 153, 102);
+    text-shadow: 0 0 10px rgb(173, 153, 102, 0.5);
+}
+
+.contact>div:last-child h2 {
+    color: rgb(14, 23, 54);
+    font-weight: 200;
+    text-align: left;
+    font-size: 0.875vw;
+    font-family: "Roboto", sans-serif;
+    text-align: justify;
+    hyphens: auto;
+    word-wrap: break-word;
+    user-select: none;
+}
+
+.contact>div:last-child span {
+    font-size: 1.5vw;
+    float: left;
+    font-family: "Playfair Display", serif;
+    font-weight: 100;
+    padding-right: 0.5vh;
+}
+
+
+/* Footer */
+
+footer {
+    height: auto;
+    width: 70%;
+
+    padding: 20vh 15% 15vh 15%;
+
+    background-color: rgb(4, 9, 30);
+
+    margin-top: 12.5vh;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) 1.25fr;
+    grid-template-rows: repeat(2, auto);
+    grid-column-gap: 0vh;
+    grid-row-gap: 10vh;
+
+    align-items: start;
+    justify-content: center;
+
+    box-shadow: rgb(0, 0, 0, 0.5) 0 -25px 50px 5px;
+
+    border-radius: 2.5vh 2.5vh 0 0;
+    corner-shape: scoop;
+
+    outline: solid rgb(4, 9, 30) 0.75vh;
+    outline-offset: 0.5vh;
+}
+
+footer>div:nth-child(6) {
+    grid-column: 1 / 5;
+}
+
+footer h1 {
+    color: rgb(239, 235, 224);
+    font-weight: 500;
+    text-align: left;
+    font-size: 1vw;
+    font-family: "Playfair Display", serif;
+    text-transform: uppercase;
+    letter-spacing: 0.25vh;
+
+    margin-bottom: 2.5vh;
+
+    transition: 0.25s;
+}
+
+footer h1:hover {
+    color: rgb(173, 153, 102);
+    text-shadow: 0 0 5px rgb(173, 153, 102, 0.5);
+}
+
+footer h2,
+footer a {
+    color: rgb(110, 109, 105);
+    font-weight: 400;
+    text-align: left;
+    font-size: 0.75vw;
+    font-family: "Roboto", sans-serif;
+    text-align: justify;
+    hyphens: auto;
+    word-wrap: break-word;
+    user-select: none;
+    text-decoration: none;
+
+    margin-bottom: 0.5vh;
+}
+
+footer div:nth-child(6) a {
+    color: rgb(173, 153, 102);
+
+    transition: 0.25s;
+}
+
+footer div:nth-child(6) a:hover {
+    color: rgb(97, 79, 34);
+}
+
+footer form {
+    margin-top: 2vh;
+    height: 2.5vh;
+    display: flex;
+
+    box-sizing: border-box;
+}
+
+footer input {
+    background: none;
+    border: none;
+
+    box-sizing: border-box;
+
+    color: rgb(110, 109, 105);
+
+    border: solid rgb(110, 109, 105) 0.1vh;
+    border-radius: 1vh 0 0 1vh;
+    corner-shape: scoop;
+
+    width: 75%;
+
+    padding: 6% 5%;
+}
+
+footer button {
+    background-color: rgb(110, 109, 105);
+
+    height: 100%;
+    width: 7.5vh;
+    padding: 6.07%;
+
+    border: solid rgb(110, 109, 105) 0.1vh;
+    border-radius: 0 1vh 1vh 0;
+    corner-shape: scoop;
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+footer button>svg {
+    height: auto;
+    width: auto;
+
+    fill: rgb(4, 9, 30);
+}
+
+footer div:last-child {
+    display: flex;
+    gap: 1vh;
+    justify-content: end;
+}
+
+footer div>a {
+    cursor: pointer;
+
+    background-color: rgb(23, 27, 46);
+    height: 3.5vh;
+    width: 3.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 0.5vh;
+    corner-shape: scoop;
+
+    pointer-events: auto;
+
+    transition: 0.25s;
+}
+
+footer div>a svg {
+    fill: rgb(173, 153, 102);
+    height: 2vh;
+    width: 2vh;
+}
+
+footer div>a:hover {
+    background-color: rgb(173, 153, 102);
+}
+
+footer div>a:hover svg {
+    fill: rgb(239, 235, 224);
+}
+
+
+/* Blog */
+
+/* - Blog Category */
+
+.blog>.category {
+    width: 75%;
+    margin: 7.5vh auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 5vh;
+}
+
+.blog .category>div {
+    width: 100%;
+    aspect-ratio: 360/220;
+
+    corner-shape: scoop;
+    border-radius: 2.5vh;
+    box-shadow: rgb(0, 0, 0, 0.5) 0 0 50px 5px;
+
+    outline: solid rgb(255, 255, 255) 0.25vh;
+    outline-offset: -0.75vh;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    box-sizing: border-box;
+    padding: 10%;
+}
+
+.blog .category>div:first-child {
+    background-image: url(img/cat-widget1.jpg);
+}
+
+.blog .category>div:nth-child(2) {
+    background-image: url(img/cat-widget2.jpg);
+}
+
+.blog .category>div:last-child {
+    background-image: url(img/cat-widget3.jpg);
+}
+
+.blog .category>div>div {
+    height: 100%;
+    width: 100%;
+
+    background-color: rgb(0, 0, 0, 0.8);
+    backdrop-filter: blur(2.5px);
+    box-shadow: rgb(0, 0, 0, 0.8) 0 0 20px 10px;
+
+    border-radius: 2vh;
+    corner-shape: scoop;
+    padding: auto;
+    box-sizing: border-box;
+
+    transition: 0.3s;
+}
+
+.blog .category>div>div:hover {
+    background-color: rgba(73, 60, 28, 0.75);
+    box-shadow: rgba(49, 40, 17, 0.75) 0 0 20px 10px;
+}
+
+.blog .category>div>div>div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.blog .category h1 {
+    color: rgb(247, 245, 239);
+    font-weight: 100;
+    text-align: center;
+    font-size: 1.75vh;
+    width: 25vh;
+    padding: 0 1vh 1vh 1vh;
+    border-bottom: solid rgb(247, 245, 239) 0.1vh;
+    font-family: "Playfair Display", serif;
+    text-transform: uppercase;
+    letter-spacing: 1.25vh;
+}
+
+.blog .category h2 {
+    color: rgb(247, 245, 239);
+    font-weight: 200;
+    padding: 1vh 0;
+    text-align: center;
+    font-size: 1.5vh;
+    font-family: "Roboto", sans-serif;
+}
+
+/* - Blog Post Area */
+
+.blog .postArea {
+    display: grid;
+    grid-template-columns: 4fr 1.5fr;
+    column-gap: 5vh;
+
+    width: 82.5%;
+    margin: 0 auto;
+}
+
+.blog .postArea>div {
+    height: 100%;
+    width: 100%;
+}
+
+.blog .postArea>div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
+}
+
+.blog .postArea>div:first-child .post {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 2.5vh;
+}
+
+.blog .postArea>div:first-child .post div:first-child {
+    margin: 2.5vh 0;
+    width: 60%;
+    justify-self: end;
+    text-align: end;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+.blog .postArea>div:first-child .post div:first-child h1,
+.blog .postArea>div:first-child .post div:first-child h1 a {
+    color: rgb(4, 9, 30);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 3vh;
+    font-family: "Roboto", sans-serif;
+
+    transition: 0.25s;
+}
+
+.blog .postArea>div:first-child .post div:first-child h1 a::after {
+    content: ",";
+}
+
+.blog .postArea>div:first-child .post div:first-child h1 a:last-child:after {
+    content: "";
+}
+
+.blog .postArea>div:first-child .post div:first-child a:hover {
+    color: rgb(173, 153, 102);
+}
+
+.blog .postArea>div:first-child .post div:first-child div {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    align-items: end;
+}
+
+.blog .postArea>div:first-child .post div:first-child div a {
+    display: flex;
+    gap: 2vh;
+    justify-self: end;
+    align-items: center;
+
+    color: rgb(14, 23, 54);
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 1.5vh;
+    font-family: "Roboto", sans-serif;
+
+    transition: 0.25s;
+}
+
+.blog .postArea>div:first-child .post div:first-child div a h2 {
+    color: rgb(14, 23, 54);
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 1.5vh;
+    font-family: "Roboto", sans-serif;
+
+    transition: 0.25s;
+}
+
+.blog .postArea>div:first-child .post div:first-child div a svg {
+    height: 3vh;
+    fill: rgb(14, 23, 54);
+
+    transition: 0.25s;
+}
+
+.blog .postArea>div:first-child .post div:first-child div a:hover h2 {
+    color: rgb(173, 153, 102);
+}
+
+.blog .postArea>div:first-child .post div:first-child div a:hover svg {
+    fill: rgb(173, 153, 102);
+}
+
+.blog .postArea>div:first-child .post div:last-child img {
+    width: 100%;
+
+    outline: solid rgb(247, 245, 239) 0.25vh;
+    outline-offset: -0.5vh;
+    border-radius: 2.5vh;
+    corner-shape: scoop;
+}
+
+.blog .postArea>div:first-child .post div:last-child h1,
+.blog .postArea>div:first-child .post div:last-child h1 a {
+    color: rgb(4, 9, 30);
+    font-weight: 300;
+    font-size: 3.5vh;
+    font-family: "Playfair Display", serif;
+    text-decoration: none;
+    margin: 2.5vh 0;
+
+    transition: 0.25s;
+}
+
+.blog .postArea>div:first-child .post div:last-child h1:hover a {
+    color: rgb(173, 153, 102);
+}
+
+.blog .postArea>div:first-child .post>div:last-child h2 {
+    color: rgb(14, 23, 54);
+    font-weight: 300;
+    font-size: 1.75vh;
+    font-family: "Roboto", sans-serif;
+    text-align: justify;
+    hyphens: auto;
+    word-wrap: break-word;
+
+    margin-bottom: 5vh;
+}
+
+.blog .postArea>div:first-child .post>div:last-child>a {
+    color: rgb(247, 245, 239);
+    font-family: "Roboto", sans-serif;
+    font-size: 1.75vh;
+    text-decoration: none;
+    font-weight: 400;
+    text-align: center;
+    font-size: 1.75vh;
+
+    padding: 1.25vh 2.5vh;
+
+    background-color: rgb(173, 153, 102);
+
+    border: solid rgb(247, 245, 239) 0.1vh;
+    outline: solid rgb(247, 245, 239) 0.1vh;
+    outline-offset: -0.5vh;
+    border-radius: 1vh;
+    corner-shape: scoop;
+
+    transition: 1s;
+}
+
+.blog .postArea>div:first-child .post>div:last-child>a:hover {
+    color: rgb(173, 153, 102);
+
+    background-color: rgb(173, 153, 102, 0);
+
+    border: solid rgb(173, 153, 102) 0.1vh;
+    outline: solid rgb(173, 153, 102) 0.1vh;
+    outline-offset: -0.5vh;
+}
+
+.blog .postArea>div:first-child .pages {
+    display: flex;
+    gap: 1vh;
+
+    width: calc(100%/2);
+    margin-left: calc(100%/3 + 2.5vh);
+}
+
+.blog .postArea>div:first-child .pages a {
+    cursor: pointer;
+
+    background-color: rgb(239, 235, 224);
+    height: 3.5vh;
+    width: 3.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 0.5vh;
+    corner-shape: scoop;
+
+    pointer-events: auto;
+
+    color: rgb(173, 153, 102);
+    text-decoration: none;
+
+    transition: 0.25s;
+}
+
+.blog .postArea>div:first-child .pages svg {
+    height: 2.5vh;
+    width: 2.5vh;
+}
+
+.blog .postArea>div:first-child .pages>svg {
+    background-color: rgb(239, 235, 224);
+    fill: rgb(173, 153, 102);
+    padding: 0.5vh;
+
+    border-radius: 0.5vh;
+    corner-shape: scoop;
+}
+
+.blog .postArea>div:first-child .pages a svg {
+    fill: rgb(173, 153, 102);
+}
+
+
+.blog .postArea>div:first-child .pages a:hover,
+.blog .postArea>div:first-child .pages .currentPage {
+    background-color: rgb(173, 153, 102);
+    color: rgb(239, 235, 224);
+}
+
+.blog .postArea>div:first-child .pages a:hover svg {
+    fill: rgb(239, 235, 224);
+}
+
+.blog .postArea>div:last-child {
+    border: solid rgb(73, 60, 28, 0.33) 0.1vh;
+    border-radius: 2.5vh;
+    corner-shape: scoop;
+
+    position: sticky;
+    top: 20vh;
+
+    box-sizing: border-box;
+    padding: 5vh 2.5vh;
+    height: fit-content;
+}
+
+.blog .postArea>div:last-child .search form {
+    width: 100%;
+
+    background-color: rgb(173, 153, 102);
+
+    border: solid rgb(247, 245, 239) 0.1vh;
+    outline: solid rgb(247, 245, 239) 0.1vh;
+    outline-offset: -0.5vh;
+    border-radius: 1vh;
+    corner-shape: scoop;
+
+    padding: 2.5% 5%;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+}
+
+.blog .postArea>div:last-child .search input {
+    background: none;
+    border: none;
+
+    color: rgb(247, 245, 239);
+    font-weight: 300;
+    font-size: 1.5vh;
+    font-family: "Roboto", sans-serif;
+}
+
+.blog .postArea>div:last-child .search input::placeholder {
+    color: rgb(247, 245, 239, 0.75);
+    font-weight: 200;
+    font-size: 1.5vh;
+    font-family: "Roboto", sans-serif;
+}
+
+.blog .postArea>div:last-child .search input:focus {
+    outline: none;
+}
+
+.blog .postArea>div:last-child .search button {
+    background: none;
+    border: none;
+
+    height: 4vh;
+    width: 4vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.blog .postArea>div:last-child .search button svg {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    transform: rotate(-45deg);
+    transform-origin: center;
+    fill: rgb(247, 245, 239);
+}
+
+.blog .postArea>div:last-child .aboutPosts {
+    border-top: solid rgb(73, 60, 28, 0.33) 0.1vh;
+    border-bottom: solid rgb(73, 60, 28, 0.33) 0.1vh;
+
+    padding: 7.5% 5%;
+    margin: 5vh 1vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog .postArea>div:last-child .aboutPosts img {
+    height: 12.5vh;
+}
+
+.blog .postArea>div:last-child .aboutPosts a {
+    color: rgb(4, 9, 30);
+    font-weight: 100;
+    text-align: center;
+    font-size: 2.5vh;
+    font-family: "Playfair Display", serif;
+    text-decoration: none;
+    margin: 1vh 0 0.5vh 0;
+
+    transition: 0.25s;
+}
+
+.blog .postArea>div:last-child .aboutPosts a:hover {
+    color: rgb(173, 153, 102);
+}
+
+.blog .postArea>div:last-child .aboutPosts h2 {
+    color: rgb(14, 23, 54);
+    font-weight: 300;
+    font-size: 2vh;
+    font-family: "Roboto", sans-serif;
+}
+
+.blog .postArea>div:last-child .aboutPosts .icons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1vh;
+}
+
+.blog .postArea>div:last-child .aboutPosts .icons a {
+    cursor: pointer;
+}
+
+.blog .postArea>div:last-child .aboutPosts .icons a svg {
+    fill: rgb(4, 9, 30);
+    height: 2vh;
+    width: 2vh;
+
+    transition: 0.25s;
+}
+
+.blog .postArea>div:last-child .aboutPosts .icons a:hover svg {
+    fill: rgb(173, 153, 102);
+}
+
+.blog .postArea>div:last-child .aboutPosts h3 {
+    color: rgb(14, 23, 54);
+    font-weight: 300;
+    font-size: 1.5vh;
+    font-family: "Roboto", sans-serif;
+    margin: 2vh;
+    text-align: justify;
+    hyphens: auto;
+    word-wrap: break-word;
+}
+
+.blog .postArea>div:last-child .popularPosts {
+    border-bottom: solid rgb(73, 60, 28, 0.33) 0.1vh;
+}
+
+.blog .postArea>div:last-child .popularPosts h1 {
+    color: rgb(247, 245, 239);
+    font-weight: 100;
+    text-align: center;
+    font-size: 2.5vh;
+    font-family: "Playfair Display", serif;
+    text-decoration: none;
+    margin: 1vh 0 0.5vh 0;
+
+    background-color: rgb(173, 153, 102);
+
+    border: solid rgb(247, 245, 239) 0.1vh;
+    outline: solid rgb(247, 245, 239) 0.1vh;
+    outline-offset: -0.5vh;
+    border-radius: 1vh;
+    corner-shape: scoop;
+
+    padding: 2.5% 5%;
+}
+
+.blog .postArea>div:last-child .popularPosts .posts {
+    margin: 5vh 1.25vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5vh;
+}
+
+.blog .postArea>div:last-child .popularPosts .posts .post {
+    display: flex;
+    gap: 1.5vh;
+}
+
+.blog .postArea>div:last-child .popularPosts .posts .post img {
+    height: 10vh;
+
+    outline: solid rgb(247, 245, 239) 0.25vh;
+    outline-offset: -0.75vh;
+    border-radius: 1.25vh;
+    corner-shape: scoop;
+}
+
+.blog .postArea>div:last-child .popularPosts .posts .post a {
+    color: rgb(4, 9, 30);
+    font-weight: 100;
+    font-size: 1.75vh;
+    font-family: "Playfair Display", serif;
+    text-decoration: none;
+
+    transition: 0.25s;
+}
+
+.blog .postArea>div:last-child .popularPosts .posts .post a:hover {
+    color: rgb(173, 153, 102);
+}
+
+.blog .postArea>div:last-child .popularPosts .posts .post h2 {
+    color: rgb(14, 23, 54);
+    font-weight: 300;
+    font-size: 1.5vh;
+    font-family: "Roboto", sans-serif;
+}
+
+.blog .postArea>div:last-child .Ad {
+    padding: 5vh 1.25vh;
+    border-bottom: solid rgb(73, 60, 28, 0.33) 0.1vh;
+}
+
+.blog .postArea>div:last-child .Ad a {
+    width: 100%;
+}
+
+.blog .postArea>div:last-child .Ad img {
+    width: 100%;
+    outline: solid rgb(247, 245, 239) 0.25vh;
+    outline-offset: -0.5vh;
+    border-radius: 2.5vh;
+    corner-shape: scoop;
+    overflow: hidden;
+}
+
+.blog .postArea>div:last-child .postCatgories {
+    border-bottom: solid rgb(73, 60, 28, 0.33) 0.1vh;
+}
+
+.blog .postArea>div:last-child .postCatgories h1 {
+    color: rgb(247, 245, 239);
+    font-weight: 100;
+    text-align: center;
+    font-size: 2.5vh;
+    font-family: "Playfair Display", serif;
+    text-decoration: none;
+    margin: 5vh 0;
+
+    background-color: rgb(173, 153, 102);
+
+    border: solid rgb(247, 245, 239) 0.1vh;
+    outline: solid rgb(247, 245, 239) 0.1vh;
+    outline-offset: -0.5vh;
+    border-radius: 1vh;
+    corner-shape: scoop;
+
+    padding: 2.5% 5%;
+}
+
+.blog .postArea>div:last-child .postCatgories .categories {
+    width: 100%;
+    margin-bottom: 5vh;
+    padding: 0 1.25vh;
+    box-sizing: border-box;
+}
+
+.blog .postArea>div:last-child .postCatgories .categories .category {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+    margin-bottom: 2.5vh;
+    padding-bottom: 1vh;
+    border-bottom: solid rgb(73, 60, 28, 0.33) 0.1vh;
+
+    transition: 0.25s;
+}
+
+.blog .postArea>div:last-child .postCatgories .categories .category h2 {
+    color: rgb(14, 23, 54);
+    font-weight: 300;
+    font-size: 1.75vh;
+    font-family: "Roboto", sans-serif;
+
+    transition: 0.25s;
+}
+
+.blog .postArea>div:last-child .postCatgories .categories .category h3 {
+    color: rgb(14, 23, 54);
+    font-weight: 200;
+    font-size: 1.5vh;
+    font-family: "Roboto", sans-serif;
+
+    transition: 0.25s;
+}
+
+.blog .postArea>div:last-child .postCatgories .categories .category:hover {
+    border-bottom: dashed rgb(173, 153, 102, 0.5) 0.1vh;
+}
+
+.blog .postArea>div:last-child .postCatgories .categories .category:hover h2,
+.blog .postArea>div:last-child .postCatgories .categories .category:hover h3 {
+    color: rgb(173, 153, 102);
+}
+
+.blog .postArea>div:last-child .newsletter {
+    border-bottom: solid rgb(73, 60, 28, 0.33) 0.1vh;
+}
+
+.blog .postArea>div:last-child .newsletter h1 {
+    color: rgb(247, 245, 239);
+    font-weight: 100;
+    text-align: center;
+    font-size: 2.5vh;
+    font-family: "Playfair Display", serif;
+    text-decoration: none;
+    margin: 5vh 0;
+
+    background-color: rgb(173, 153, 102);
+
+    border: solid rgb(247, 245, 239) 0.1vh;
+    outline: solid rgb(247, 245, 239) 0.1vh;
+    outline-offset: -0.5vh;
+    border-radius: 1vh;
+    corner-shape: scoop;
+
+    padding: 2.5% 5%;
+}
+
+.blog .postArea>div:last-child .newsletter h2 {
+    color: rgb(14, 23, 54);
+    font-weight: 300;
+    font-size: 1.5vh;
+    font-family: "Roboto", sans-serif;
+    margin: 0 5vh;
+    text-align: justify;
+    hyphens: auto;
+    word-wrap: break-word;
+}
+
+.blog .postArea>div:last-child .newsletter form {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: 5vh;
+    margin: 2.5vh 1.25vh;
+
+    border: solid rgb(173, 153, 102) 0.25vh;
+    border-radius: 1vh;
+    corner-shape: scoop;
+    overflow: hidden;
+}
+
+.blog .postArea>div:last-child .newsletter form input {
+    background: none;
+    border: none;
+    padding: 0 1.5vh;
+
+    color: rgb(14, 23, 54);
+    font-weight: 400;
+    font-size: 1.75vh;
+    font-family: "Roboto", sans-serif;
+}
+
+.blog .postArea>div:last-child .newsletter form input::placeholder {
+    color: rgb(23, 27, 46);
+    font-weight: 200;
+    font-size: 1.75vh;
+    font-family: "Roboto", sans-serif;
+}
+
+.blog .postArea>div:last-child .newsletter form input:focus {
+    outline: none;
+}
+
+.blog .postArea>div:last-child .newsletter form button {
+    background-color: rgb(173, 153, 102);
+    border-radius: 1vh 0 0 1vh;
+    corner-shape: scoop;
+    border: none;
+
+    cursor: pointer;
+
+    color: rgb(247, 245, 239);
+    font-weight: 500;
+    font-size: 1.75vh;
+    font-family: "Roboto", sans-serif;
+}
+
+.blog .postArea>div:last-child .newsletter h3 {
+    color: rgb(14, 23, 54);
+    font-weight: 300;
+    font-size: 1.5vh;
+    font-family: "Roboto", sans-serif;
+    margin: 5vh;
+    text-align: center;
+}
+
+.blog .postArea>div:last-child .tagClouds h1 {
+    color: rgb(247, 245, 239);
+    font-weight: 100;
+    text-align: center;
+    font-size: 2.5vh;
+    font-family: "Playfair Display", serif;
+    text-decoration: none;
+    margin: 5vh 0;
+
+    background-color: rgb(173, 153, 102);
+
+    border: solid rgb(247, 245, 239) 0.1vh;
+    outline: solid rgb(247, 245, 239) 0.1vh;
+    outline-offset: -0.5vh;
+    border-radius: 1vh;
+    corner-shape: scoop;
+
+    padding: 2.5% 5%;
+}
+
+.blog .postArea>div:last-child .tagClouds .tags {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 0.5vh;
+    row-gap: 1vh;
+
+    margin-bottom: 1vh;
+}
+
+.blog .postArea>div:last-child .tagClouds .tags a {
+    background-color: rgb(247, 245, 239);
+
+    padding: 1.5vh;
+
+    outline: solid rgb(255, 255, 255) 0.1vh;
+    outline-offset: -0.25vh;
+    border-radius: 0.5vh;
+    corner-shape: scoop;
+
+    color: rgb(14, 23, 54);
+    font-weight: 400;
+    font-size: 1.5vh;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    text-decoration: none;
+
+    transition: 0.25s;
+}
+
+.blog .postArea>div:last-child .tagClouds .tags a:hover {
+    background-color: rgb(173, 153, 102);
+    color: rgb(255, 255, 255);
+}
